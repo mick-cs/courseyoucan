@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><?php echo $__env->yieldContent('title'); ?></title>
+    <link rel="stylesheet" href="">
+    <!-- =============== VENDOR STYLES ===============-->
+    <!-- FONT AWESOME-->
+    <link rel="stylesheet" href="<?php echo e(asset('admin/vendor/fontawesome/css/font-awesome.min.css')); ?>">
+    <!-- SIMPLE LINE ICONS-->
+    <link rel="stylesheet" href="<?php echo e(asset('admin/vendor/simple-line-icons/css/simple-line-icons.css')); ?>">
+    <!-- ANIMATE.CSS-->
+    <link rel="stylesheet" href="<?php echo e(asset('admin/vendor/animate.css/animate.min.css')); ?>">
+    <!-- WHIRL (spinners)-->
+    <link rel="stylesheet" href="<?php echo e(asset('admin/vendor/whirl/dist/whirl.css')); ?>">
+    <!-- =============== PAGE VENDOR STYLES ===============-->
+    <?php echo $__env->yieldContent('style'); ?>
+    <!-- =============== BOOTSTRAP STYLES ===============-->
+    <link rel="stylesheet" href="<?php echo e(asset('admin/css/bootstrap.css')); ?>" id="bscss">
+    <!-- =============== APP STYLES ===============-->
+    <link rel="stylesheet" href="<?php echo e(asset('admin/css/app.css')); ?>" id="maincss"></head>
+<body>
+    <div class="wrapper">
+        <?php if(Auth::check()): ?>
+            <?php echo $__env->make('admin.partials.navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php echo $__env->make('admin.partials.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php echo $__env->make('admin.partials.offsidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php endif; ?>
+
+        <?php echo $__env->yieldContent('container'); ?>
+    </div>
+
+    <!-- =============== VENDOR SCRIPTS ===============-->
+    <!-- MODERNIZR-->
+    <script src="<?php echo e(asset('admin/vendor/modernizr/modernizr.js')); ?>"></script>
+    <!-- JQUERY-->
+    <script src="<?php echo e(asset('admin/vendor/jquery/dist/jquery.js')); ?>"></script>
+    <!-- BOOTSTRAP-->
+    <script src="<?php echo e(asset('admin/vendor/bootstrap/dist/js/bootstrap.js')); ?>"></script>
+    <!-- STORAGE API-->
+    <script src="<?php echo e(asset('admin/vendor/jQuery-Storage-API/jquery.storageapi.js')); ?>"></script>
+    <!-- JQUERY EASING-->
+    <script src="<?php echo e(asset('admin/vendor/jquery.easing/js/jquery.easing.js')); ?>"></script>
+    <!-- ANIMO-->
+    <script src="<?php echo e(asset('admin/vendor/animo.js/animo.js')); ?>"></script>
+    <!-- SLIMSCROLL-->
+    <script src="<?php echo e(asset('admin/vendor/slimScroll/jquery.slimscroll.min.js')); ?>"></script>
+    <!-- SCREENFULL-->
+    <script src="<?php echo e(asset('admin/vendor/screenfull/dist/screenfull.js')); ?>"></script>
+    <!-- LOCALIZE-->
+    <script src="<?php echo e(asset('admin/vendor/jquery-localize-i18n/dist/jquery.localize.js')); ?>"></script>
+    <!-- RTL demo-->
+    <script src="<?php echo e(asset('admin/js/demo/demo-rtl.js')); ?>"></script>
+    <!-- =============== PAGE VENDOR SCRIPTS ===============-->
+    <?php echo $__env->yieldContent('script'); ?>
+    <!-- =============== APP SCRIPTS ===============-->
+    <script src="<?php echo e(asset('admin/js/app.js')); ?>"></script>
+</body>
+</body>
+</html>
